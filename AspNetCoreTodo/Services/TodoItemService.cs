@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreTodo.Services
 {
@@ -19,7 +20,7 @@ namespace AspNetCoreTodo.Services
         public async Task<TodoItem[]> GetIncompleteItemsAsync()
         {
             return await _context.Items
-                .Where(x => x.IsDone = false)
+                .Where(x => x.IsDone == false)
                 .ToArrayAsync();
         }
     }
