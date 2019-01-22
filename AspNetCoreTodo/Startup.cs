@@ -41,7 +41,7 @@ namespace AspNetCoreTodo
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+            services.AddSingleton<ITodoItemService, TodoItemService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
