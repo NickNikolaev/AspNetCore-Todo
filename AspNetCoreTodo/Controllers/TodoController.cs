@@ -56,7 +56,7 @@ namespace AspNetCoreTodo.Controllers
                 return RedirectToAction("Index");
             }
 
-            var successful = await _todoItemService.MarkDownAsync(id);
+            var successful = await _todoItemService.MarkDoneAsync(id);
 
             if (!successful)
             {
