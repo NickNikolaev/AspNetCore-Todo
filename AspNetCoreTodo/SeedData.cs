@@ -30,15 +30,15 @@ namespace AspNetCoreTodo
         private static async Task EnsureTestAdminAsync(UserManager<IdentityUser> userManager)
         {
             var testAdmin = await userManager.Users
-                .Where(x => x.UserName == "admin@todo.local")
+                .Where(x => x.UserName == "admin@todo.zz")
                 .SingleOrDefaultAsync();
 
             if (testAdmin != null) return;
 
             testAdmin = new IdentityUser
             {
-                UserName = "admin@todo.local",
-                Email = "admin@todo.local"
+                UserName = "admin@todo.zz",
+                Email = "admin@todo.zz"
             };
 
             await userManager.CreateAsync(testAdmin, "Qwerty123#");
